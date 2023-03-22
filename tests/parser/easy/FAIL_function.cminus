@@ -1,0 +1,3 @@
+/* unclosed function */
+int main(void)
+{

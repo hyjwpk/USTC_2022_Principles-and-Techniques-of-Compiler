@@ -1,0 +1,6 @@
+void main(void) {
+    output(1. <= 2);
+    output(2. <= 2);
+    output(3 <= 2.);
+    return;
+}

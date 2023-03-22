@@ -1,0 +1,19 @@
+/* c and d are redundant, and also check for constant propagation */
+int main(void) {
+    int a;
+    int b;
+    int c;
+    int d;
+    if (input() > input()) {
+        a = 33 + 33;
+        b = 44 + 44;
+        c = a + b;
+    } else {
+        a = 55 + 55;
+        b = 66 + 66;
+        c = a + b;
+    }
+    output(c);
+    d = a + b;
+    output(d);
+}

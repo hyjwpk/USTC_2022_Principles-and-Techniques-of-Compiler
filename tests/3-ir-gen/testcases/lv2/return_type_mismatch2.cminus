@@ -1,0 +1,8 @@
+float f(void) {
+    return 7;
+}
+
+void main(void) {
+    outputFloat(f());
+    return;
+}

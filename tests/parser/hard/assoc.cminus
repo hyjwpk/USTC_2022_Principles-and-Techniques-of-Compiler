@@ -1,0 +1,5 @@
+/* associativity and precedence */
+int main(void)
+{
+  a = b = c = 1 + 1 / 2 * 1 * (1 + 1 + 1 - 1 / 1) + 3 + 4 * 3;
+}

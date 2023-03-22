@@ -1,0 +1,12 @@
+/* check GVN on one-block input */
+int main(void) {
+    int a;
+    int b;
+    /* we provide a pure function analysis,
+       input is not side-effect free, so multiple calls to input are considered different */
+    a = input();
+    b = input();
+    output(a + b);
+    output(a + b);
+    return 0;
+}

@@ -1,0 +1,41 @@
+/* `max` is pure, can be detected using FuncInfo */
+int max(int a, int b) {
+    if (a > b)
+        return a;
+    return b;
+}
+
+int a[10000];
+int b[10000];
+
+void inputarray(int a[], int n) {
+    int i;
+    i = 0;
+    while (i < n) {
+        a[i] = input();
+        i = i + 1;
+    }
+}
+
+int main(void) {
+    int i;
+    int n;
+    n = input();
+    inputarray(a, n);
+    inputarray(b, n);
+    i = 0;
+    while (i < n) {
+        int ai;
+        int bi;
+        /* `gep a i` and `max(ai,bi)` are redundant */
+        ai = a[i];
+        bi = b[i];
+        a[i] = max(ai, bi) * max(ai, bi);
+        i = i + 1;
+    }
+    i = 0;
+    while (i < n) {
+        output(a[i]);
+        i = i + 1;
+    }
+}

@@ -1,0 +1,8 @@
+int f(void) {
+    return 233.3;
+}
+
+void main(void) {
+    output(f());
+    return;
+}

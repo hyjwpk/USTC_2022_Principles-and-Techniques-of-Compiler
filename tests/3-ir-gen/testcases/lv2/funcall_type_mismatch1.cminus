@@ -1,0 +1,11 @@
+void f(int a) {
+    output(a);
+    return;
+}
+
+void main(void) {
+    float a;
+    a = 10;
+    f(a);
+    return;
+}

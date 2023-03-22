@@ -1,0 +1,6 @@
+void main(void) {
+    float b;
+    b = 1234.0;
+    outputFloat(b);
+    return;
+}

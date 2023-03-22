@@ -1,0 +1,100 @@
+float get(float a[], int x, int y, int row) {
+    return a[x * row + y];
+}
+
+float abs(float x) {
+	if (x > 0)
+		return x;
+	else
+        return 0 - x;
+}
+
+float isZero(float t) {
+    return abs(t) < 0.000001;
+}
+
+int gauss(float vars[], float equ[], int var) {
+    int i;
+    int j;
+    int k;
+    int varone;
+    int maxr;
+    int col;
+    float temp;
+    varone = var + 1;
+
+    i = 0;
+    while (i < var) {
+        vars[i] = 0;
+        i = i + 1;
+    }
+
+    col = 0;
+    k = 0;
+    while (k < var) {
+        maxr = k;
+        i = k + 1;
+        while (i < var) {
+            if (abs(get(equ, i, col, varone)) > abs(get(equ, maxr, col, varone)))
+                maxr = i;
+            i = i + 1;
+        }
+        if (maxr != k) {
+            j = k;
+
+            while (j < varone) {
+                temp = get(equ, k, j, varone);
+                equ[k * varone + j] = get(equ, maxr, j, varone);
+                equ[maxr * varone + j] = temp;
+                j = j + 1;
+            }
+        }
+        if (isZero(get(equ, k, col, varone))) {
+            k = k - 1;
+        } else {
+            i = k + 1;
+            while (i < var) {
+                if (1 - isZero(get(equ, i, col, varone))) {
+                    temp = get(equ, i, col, varone) / get(equ, k, col, varone);
+                    j = col;
+                    while (j < varone) {
+                        equ[i * varone + j] = equ[i * varone + j] - get(equ, k, j, varone) * temp;
+                        j = j + 1;
+                    }
+                }
+                i = i + 1;
+            }
+        }
+        k = k + 1;
+        col = col + 1;
+    }
+
+    i = var - 1;
+    while (i >= 0) {
+        temp = get(equ, i, var, varone);
+        j = i + 1;
+        while (j < var) {
+            if (1 - isZero(get(equ, i, j, varone)))
+                temp = temp - get(equ, i, j, varone) * vars[j];
+            j = j + 1;
+        }
+        vars[i] = temp / get(equ, i, i, varone);
+        i = i - 1;
+    }
+    return 0;
+}
+
+void main(void) {
+    int num;
+    float vars[3];
+    float equ[12];
+    equ[0] = 1; equ[1] = 2; equ[2] = 1; equ[3] = 1;
+    equ[1 * 4 + 0] = 2; equ[1 * 4 + 1] = 3; equ[1 * 4 + 2] = 4; equ[1 * 4 + 3] = 3;
+    equ[2 * 4 + 0] = 1; equ[2 * 4 + 1] = 1; equ[2 * 4 + 2] = 0 - 2; equ[2 * 4 + 3] = 0;
+    gauss(vars, equ, 3);
+    num = 0;
+    while (num < 3) {
+        outputFloat(vars[num]);
+        num = num + 1;
+    }
+}

@@ -1,0 +1,11 @@
+void test(float a[]) {
+    output(a[3]);
+    return;
+}
+
+void main(void) {
+    float a[10];
+    a[3] = 3.14;
+    test(a);
+    return;
+}

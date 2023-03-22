@@ -1,0 +1,41 @@
+/* c and d are redundant, e and f are not redundant  */
+int main(void) {
+    int i;
+    int j;
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    int f;
+
+    a = 2;
+    b = 2;
+    c = 2;
+    d = 2;
+    e = 2;
+    f = 2;
+
+    i = 1;
+    while (i < 10) {
+        j = 1;
+        a = input();
+        b = input();
+        c = a + b;
+        while (j < 10) {
+            i = i + j;
+            j = i + j;
+            c = a + b;
+        }
+        d = a + b;
+        i = i + 1;
+
+        e = c + d;
+        output(c);
+        output(d);
+    }
+    f = c + d;
+    output(e);
+    output(f);
+    return 0;
+}

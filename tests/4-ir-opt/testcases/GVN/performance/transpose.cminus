@@ -1,0 +1,70 @@
+int matrix[20000000];
+int ad[100000];
+
+int len;
+
+void readarray(void) {
+    int cnt;
+    cnt = 0;
+    while (cnt < len) {
+        ad[cnt] = input();
+        cnt = cnt + 1;
+    }
+}
+
+int transpose(int n, int matrix[], int rowsize) {
+    int colsize;
+    int i;
+    int j;
+    int curr;
+    colsize = n / rowsize;
+    i = 0;
+    j = 0;
+    while (i < colsize) {
+        j = 0;
+        while (j < rowsize) {
+            if (i < j) {
+                j = j + 1;
+            } else {
+                curr = matrix[i * rowsize + j];
+                matrix[j * colsize + i] = matrix[i * rowsize + j];
+                matrix[i * rowsize + j] = curr;
+                j = j + 1;
+            }
+        }
+        i = i + 1;
+    }
+    return 0 - 1;
+}
+
+int main(void) {
+    int n;
+    int i;
+    int ans;
+    n = input();
+    len = input();
+    readarray();
+    i = 0;
+
+    while (i < n) {
+        matrix[i] = i;
+        i = i + 1;
+    }
+    i = 0;
+    while (i < len) {
+        transpose(n, matrix, ad[i]);
+        i = i + 1;
+    }
+
+    ans = 0;
+    i = 0;
+    while (i < len) {
+        ans = ans + i * i * matrix[i];
+        i = i + 1;
+    }
+    if (ans < 0) {
+        ans = 0 - ans;
+    }
+    output(ans);
+    return 0;
+}

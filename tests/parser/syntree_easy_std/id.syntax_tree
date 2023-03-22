@@ -1,0 +1,42 @@
+>--+ program
+|  >--+ declaration-list
+|  |  >--+ declaration-list
+|  |  |  >--+ declaration-list
+|  |  |  |  >--+ declaration
+|  |  |  |  |  >--+ var-declaration
+|  |  |  |  |  |  >--+ type-specifier
+|  |  |  |  |  |  |  >--* int
+|  |  |  |  |  |  >--* a
+|  |  |  |  |  |  >--* ;
+|  |  |  >--+ declaration
+|  |  |  |  >--+ fun-declaration
+|  |  |  |  |  >--+ type-specifier
+|  |  |  |  |  |  >--* int
+|  |  |  |  |  >--* f
+|  |  |  |  |  >--* (
+|  |  |  |  |  >--+ params
+|  |  |  |  |  |  >--* void
+|  |  |  |  |  >--* )
+|  |  |  |  |  >--+ compound-stmt
+|  |  |  |  |  |  >--* {
+|  |  |  |  |  |  >--+ local-declarations
+|  |  |  |  |  |  |  >--* epsilon
+|  |  |  |  |  |  >--+ statement-list
+|  |  |  |  |  |  |  >--* epsilon
+|  |  |  |  |  |  >--* }
+|  |  >--+ declaration
+|  |  |  >--+ fun-declaration
+|  |  |  |  >--+ type-specifier
+|  |  |  |  |  >--* int
+|  |  |  |  >--* g
+|  |  |  |  >--* (
+|  |  |  |  >--+ params
+|  |  |  |  |  >--* void
+|  |  |  |  >--* )
+|  |  |  |  >--+ compound-stmt
+|  |  |  |  |  >--* {
+|  |  |  |  |  >--+ local-declarations
+|  |  |  |  |  |  >--* epsilon
+|  |  |  |  |  >--+ statement-list
+|  |  |  |  |  |  >--* epsilon
+|  |  |  |  |  >--* }

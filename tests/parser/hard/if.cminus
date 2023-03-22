@@ -1,0 +1,6 @@
+/* else should be bound to the closest if */
+int main(void)
+{
+  if (1) {} else if (2) {} else {}
+  return 0;
+}

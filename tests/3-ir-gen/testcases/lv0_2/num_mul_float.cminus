@@ -1,0 +1,4 @@
+void main(void) {
+    output(2. * 61.7);
+    return;
+}

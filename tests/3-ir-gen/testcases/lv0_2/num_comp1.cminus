@@ -1,0 +1,4 @@
+void main(void) {
+    outputFloat(9 + 1.2 / (2 * 2 + 5 - 6) * 3.2 - 55);
+    return;
+}

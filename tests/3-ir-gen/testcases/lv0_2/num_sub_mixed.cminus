@@ -1,0 +1,4 @@
+void main(void) {
+    output(2000 - 76.6);
+    return;
+}
